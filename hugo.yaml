@@ -1,4 +1,4 @@
-baseURL: ""
+baseURL: "https://rex-c-chang.github.io"
 title: RC's Blog
 paginate: 5
 theme: PaperMod
