@@ -13,8 +13,8 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
         with:
-          submodules: true # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+          submodules: true
+          fetch-depth: 0
 
       - name: List git submodule status
         run: git submodule status
