@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>RC&#39;s Blog</title>
-    <link>https://rex-c-chang.github.io/</link>
-    <description>Recent content on RC&#39;s Blog</description>
+    <title>Announcement on RC&#39;s Blog</title>
+    <link>https://rex-c-chang.github.io/categories/announcement/</link>
+    <description>Recent content in Announcement on RC&#39;s Blog</description>
     <image>
       <title>RC&#39;s Blog</title>
       <url>https://rex-c-chang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -12,7 +12,7 @@
     <generator>Hugo -- 0.127.0</generator>
     <language>en</language>
     <lastBuildDate>Fri, 05 Jan 2024 09:20:00 +0800</lastBuildDate>
-    <atom:link href="https://rex-c-chang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rex-c-chang.github.io/categories/announcement/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World</title>
       <link>https://rex-c-chang.github.io/posts/2023-06-12/</link>
