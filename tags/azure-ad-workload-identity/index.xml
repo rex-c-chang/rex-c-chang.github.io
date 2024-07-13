@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>AKS on RC&#39;s Blog</title>
-    <link>https://rex-c-chang.github.io/categories/aks/</link>
-    <description>Recent content in AKS on RC&#39;s Blog</description>
+    <title>Azure AD Workload Identity on RC&#39;s Blog</title>
+    <link>https://rex-c-chang.github.io/tags/azure-ad-workload-identity/</link>
+    <description>Recent content in Azure AD Workload Identity on RC&#39;s Blog</description>
     <image>
       <title>RC&#39;s Blog</title>
       <url>https://rex-c-chang.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
@@ -12,13 +12,13 @@
     <generator>Hugo -- 0.127.0</generator>
     <language>en</language>
     <lastBuildDate>Tue, 12 Mar 2024 15:50:00 +0800</lastBuildDate>
-    <atom:link href="https://rex-c-chang.github.io/categories/aks/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://rex-c-chang.github.io/tags/azure-ad-workload-identity/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Integrate Azure AD Workload Identity with Azure Kubernetes Service (AKS)</title>
+      <title>Integrate Azure AD Workload Identity with AKS</title>
       <link>https://rex-c-chang.github.io/posts/2024/03/workload-identity-aks/</link>
       <pubDate>Tue, 12 Mar 2024 15:50:00 +0800</pubDate>
       <guid>https://rex-c-chang.github.io/posts/2024/03/workload-identity-aks/</guid>
-      <description>Integrate Workload Identity in AKS In this guide, we will explore how to integrate Azure AD Workload Identity with Azure Kubernetes Service (AKS). This integration allows AKS workloads to securely access Azure resources using managed identities, without needing to manage secrets or credentials directly within your applications.
+      <description>In this guide, we will explore how to integrate Azure AD Workload Identity with Azure Kubernetes Service (AKS). This integration allows AKS workloads to securely access Azure resources using managed identities, without needing to manage secrets or credentials directly within your applications.
 Prerequisites Account Permission Before we get started, ensure the following:
 You are logged in with the Azure CLI as a user. Your logged-in account must have sufficient permissions to create user-assigned managed identities in Azure.</description>
     </item>
