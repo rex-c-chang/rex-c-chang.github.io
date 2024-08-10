@@ -1,9 +1,9 @@
 +++
-title = 'Integrate Azure AD Workload Identity with AKS'
+title = 'Integrate Workload Identity with AKS'
 date = 2024-03-12T15:50:00+08:00
 draft = false
 categories = ["DevOps"]
-tags = ["AKS", "Azure", "Azure AD Workload Identity"]
+tags = ["AKS", "Azure", "Workload Identity"]
 +++
 
 In this guide, we will explore how to integrate Azure AD Workload Identity with Azure Kubernetes Service (AKS). This integration allows AKS workloads to securely access Azure resources using managed identities, without needing to manage secrets or credentials directly within your applications.
