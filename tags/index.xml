@@ -4,9 +4,14 @@
     <title>Tags on RC&#39;s Blog</title>
     <link>https://rex-c-chang.github.io/tags/</link>
     <description>Recent content in Tags on RC&#39;s Blog</description>
+    <image>
+      <title>RC&#39;s Blog</title>
+      <url>https://rex-c-chang.github.io/social-card.png</url>
+      <link>https://rex-c-chang.github.io/social-card.png</link>
+    </image>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Mar 2024 15:50:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 13:47:43 +0800</lastBuildDate>
     <atom:link href="https://rex-c-chang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AKS</title>
@@ -34,13 +39,6 @@
       <link>https://rex-c-chang.github.io/tags/workload-identity/</link>
       <pubDate>Tue, 12 Mar 2024 15:50:00 +0800</pubDate>
       <guid>https://rex-c-chang.github.io/tags/workload-identity/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Announcement</title>
-      <link>https://rex-c-chang.github.io/tags/announcement/</link>
-      <pubDate>Fri, 05 Jan 2024 09:20:00 +0800</pubDate>
-      <guid>https://rex-c-chang.github.io/tags/announcement/</guid>
       <description></description>
     </item>
   </channel>
