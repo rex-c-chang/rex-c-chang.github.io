@@ -3,6 +3,9 @@ title: RC's Blog
 paginate: 5
 theme: PaperMod
 
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: false
+
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
@@ -28,7 +31,7 @@ params:
   ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: false
-  ShowCodeCopyButtons: false
+  ShowCodeCopyButtons: true
   ShowWordCount: false
   ShowRssButtonInSectionTermList: false
   UseHugoToc: true
@@ -69,10 +72,7 @@ params:
       - name: Tags
         url: tags
 
-  # home-info mode
-  homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog! This is a space where I share my thoughts and insights on a variety of topics, from technology to personal growth and development.
+  # home-info mode is set per-language under languages.* below
 
   socialIcons:
     - name: github
@@ -111,24 +111,62 @@ params:
     minMatchCharLength: 0
     limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
     keys: ["title", "permalink", "summary", "content"]
-menu:
-  main:
-    - identifier: categories
-      name: Categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: Tags
-      url: /tags/
-      weight: 20
-    - identifier: archives
-      name: Archives
-      url: /archives/
-      weight: 30
-    # - identifier: example
-    #   name: example.org
-    #   url: https://example.org
-    #   weight: 30
+languages:
+  en:
+    languageName: "English"
+    languageCode: en-us
+    weight: 1
+    title: "RC's Blog"
+    params:
+      homeInfoParams:
+        Title: "Hi there \U0001F44B"
+        Content: Welcome to my blog! This is a space where I share my thoughts and insights on a variety of topics, from technology to personal growth and development.
+    menu:
+      main:
+        - identifier: posts
+          name: Posts
+          url: /posts/
+          weight: 5
+        - identifier: categories
+          name: Categories
+          url: /categories/
+          weight: 10
+        - identifier: tags
+          name: Tags
+          url: /tags/
+          weight: 20
+        - identifier: archives
+          name: Archives
+          url: /archives/
+          weight: 30
+
+  zh-tw:
+    languageName: "繁體中文"
+    languageCode: zh-tw
+    weight: 2
+    title: "RC 的部落格"
+    params:
+      homeInfoParams:
+        Title: "嗨 \U0001F44B"
+        Content: 歡迎來到我的部落格！這裡是我分享想法與心得的地方，主題涵蓋技術、個人成長等各種領域。
+    menu:
+      main:
+        - identifier: posts
+          name: 文章
+          url: /posts/
+          weight: 5
+        - identifier: categories
+          name: 分類
+          url: /categories/
+          weight: 10
+        - identifier: tags
+          name: 標籤
+          url: /tags/
+          weight: 20
+        - identifier: archives
+          name: 封存
+          url: /archives/
+          weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
