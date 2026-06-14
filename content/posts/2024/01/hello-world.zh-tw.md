@@ -2,6 +2,7 @@
 title = '你好，世界'
 date = 2024-01-05T09:20:00+08:00
 draft = false
+description = "RC 部落格的第一篇——簡單打聲招呼，並說明這裡會分享 DevOps、雲端與軟體工程的筆記。"
 tags = ["公告"]
 +++
 

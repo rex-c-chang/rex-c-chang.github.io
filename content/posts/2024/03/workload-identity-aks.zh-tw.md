@@ -2,6 +2,7 @@
 title = '在 AKS 整合 Workload Identity'
 date = 2024-03-12T15:50:00+08:00
 draft = false
+description = "一步步整合 Azure AD Workload Identity 與 AKS，讓 Pod 透過受控識別安全存取 Azure 資源，免管理密鑰。"
 tags = ["DevOps", "AKS", "Azure", "Workload Identity"]
 +++
 

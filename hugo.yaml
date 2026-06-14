@@ -22,11 +22,12 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: RC's Blog
-  description: "RC's Blog description"
-  keywords: [Blog, Portfolio, PaperMod]
-  # author: Me
-  # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  description: "Notes on DevOps, cloud, and software engineering — Kubernetes, Azure, and the things I learn building and running systems."
+  keywords: [DevOps, Kubernetes, Azure, AKS, Cloud, Software Engineering]
+  author: "Rex Chang"
+  # Default OpenGraph/Twitter share image. Add a real path/URL (e.g. an
+  # image in assets/ or static/) to enable rich social-share previews.
+  images: []
   DateFormat: "January 2, 2006"
   defaultTheme: light # dark, light
   disableThemeToggle: false
@@ -50,11 +51,12 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
+    # Add real favicon paths (place files in static/) to enable them:
+    # favicon: "/favicon.ico"
+    # favicon16x16: "/favicon-16x16.png"
+    # favicon32x32: "/favicon-32x32.png"
+    # apple_touch_icon: "/apple-touch-icon.png"
+    # safari_pinned_tab: "/safari-pinned-tab.svg"
 
   # label:
   #   text: "Home"
@@ -86,13 +88,13 @@ params:
     - name: stackoverflow
       url: "https://stackoverflow.com/users/8693034/rex-chang"
 
-  analytics:
-    google:
-      SiteVerificationTag: "XYZabc"
-    bing:
-      SiteVerificationTag: "XYZabc"
-    yandex:
-      SiteVerificationTag: "XYZabc"
+  # Site verification — paste the real token from Google Search Console
+  # (and Bing if you use it), then uncomment. Leave commented otherwise.
+  # analytics:
+  #   google:
+  #     SiteVerificationTag: ""
+  #   bing:
+  #     SiteVerificationTag: ""
 
   cover:
     hidden: true # hide everywhere but not in structured data
@@ -122,6 +124,7 @@ languages:
     weight: 1
     title: "RC's Blog"
     params:
+      description: "Notes on DevOps, cloud, and software engineering — Kubernetes, Azure, and the things I learn building and running systems."
       homeInfoParams:
         Title: "Hi there \U0001F44B"
         Content: Welcome to my blog! This is a space where I share my thoughts and insights on a variety of topics, from technology to personal growth and development.
@@ -146,6 +149,7 @@ languages:
     weight: 2
     title: "RC 的部落格"
     params:
+      description: "DevOps、雲端與軟體工程的筆記——Kubernetes、Azure，以及在建置與維運系統過程中學到的事。"
       homeInfoParams:
         Title: "嗨 \U0001F44B"
         Content: 歡迎來到我的部落格！這裡是我分享想法與心得的地方，主題涵蓋技術、個人成長等各種領域。

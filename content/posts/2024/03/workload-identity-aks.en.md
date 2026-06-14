@@ -2,6 +2,7 @@
 title = 'Integrate Workload Identity with AKS'
 date = 2024-03-12T15:50:00+08:00
 draft = false
+description = "A step-by-step guide to integrating Azure AD Workload Identity with AKS, so pods can access Azure resources securely using managed identities — no secrets required."
 tags = ["DevOps", "AKS", "Azure", "Workload Identity"]
 +++
 
