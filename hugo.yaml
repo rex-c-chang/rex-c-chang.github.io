@@ -11,6 +11,7 @@ taxonomies:
   tag: tags
 
 enableRobotsTXT: true
+enableGitInfo: true  # use git commit dates for sitemap lastmod
 buildDrafts: false
 buildFuture: false
 buildExpired: false
@@ -25,9 +26,8 @@ params:
   description: "Notes on DevOps, cloud, and software engineering — Kubernetes, Azure, and the things I learn building and running systems."
   keywords: [DevOps, Kubernetes, Azure, AKS, Cloud, Software Engineering]
   author: "Rex Chang"
-  # Default OpenGraph/Twitter share image. Add a real path/URL (e.g. an
-  # image in assets/ or static/) to enable rich social-share previews.
-  images: []
+  # Default OpenGraph/Twitter share image (1200x630, in static/).
+  images: ["/og.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: light # dark, light
   disableThemeToggle: false
