@@ -26,8 +26,8 @@ params:
   description: "Notes on backend and DevOps — Kubernetes, Azure, distributed systems, APIs, and the things I learn building and running services in production."
   keywords: [Backend, Backend Engineering, DevOps, Distributed Systems, APIs, Microservices, Kubernetes, Azure, AKS, Cloud, Software Engineering]
   author: "Rex Chang"
-  # Default OpenGraph/Twitter share image (1200x630, in static/).
-  images: ["/og.png"]
+  # Default social-share card (OpenGraph/Twitter, 1200x630, in static/).
+  images: ["/social-card.png"]
   DateFormat: "January 2, 2006"
   defaultTheme: light # dark, light
   disableThemeToggle: false
