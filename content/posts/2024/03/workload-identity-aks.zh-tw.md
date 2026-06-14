@@ -2,11 +2,11 @@
 title = '在 AKS 整合 Workload Identity'
 date = 2024-03-12T15:50:00+08:00
 draft = false
-description = "一步步整合 Azure AD Workload Identity 與 AKS，讓 Pod 透過受控識別安全存取 Azure 資源，免管理密鑰。"
+description = "一步步整合 Azure AD Workload Identity 與 AKS，讓 Pod 透過 managed identity 安全存取 Azure 資源，免管理密鑰。"
 tags = ["DevOps", "AKS", "Azure", "Workload Identity"]
 +++
 
-本指南將說明如何把 Azure AD Workload Identity 整合到 Azure Kubernetes Service (AKS)。透過這個整合，AKS 上的工作負載可以使用受控識別 (managed identity) 安全地存取 Azure 資源，而不需要在應用程式中直接管理密鑰或認證。
+本指南將說明如何把 Azure AD Workload Identity 整合到 Azure Kubernetes Service (AKS)。透過這個整合，AKS 上的工作負載可以使用 managed identity 安全地存取 Azure 資源，而不需要在應用程式中直接管理密鑰或認證。
 
 ## Prerequisites
 
@@ -15,7 +15,7 @@ tags = ["DevOps", "AKS", "Azure", "Workload Identity"]
 開始之前，請確認以下事項：
 
 - 你已經以使用者身分登入 Azure CLI。
-- 你登入的帳號具備在 Azure 中建立使用者指派受控識別 (user-assigned managed identity) 的足夠權限。
+- 你登入的帳號具備在 Azure 中建立 user-assigned managed identity 的足夠權限。
 
 ### Tools
 
@@ -30,7 +30,7 @@ tags = ["DevOps", "AKS", "Azure", "Workload Identity"]
 
 ### OIDC
 
-OpenID Connect 中繼資料 URL 是身分提供者 (identity provider) 的簽發者位置；Azure AD 會在權杖交換協定中使用它來驗證權杖，接著才以使用者指派受控識別的身分簽發權杖。
+OpenID Connect metadata URL 是 identity provider 的 issuer 位置；Azure AD 會在 token exchange protocol 中用它來驗證 token，接著才以 user-assigned managed identity 的身分簽發 token。
 
 如果你還沒有任何叢集，執行以下指令建立：
 
@@ -93,17 +93,17 @@ export SERVICE_ACCOUNT_ISSUER="<your service account issuer URL>"
 
 ## Create a User-Assigned Managed Identity and Grant Permissions to Access Your Resources
 
-建立一個將與 service account 綁定的受控識別：
+建立一個將與 service account 綁定的 managed identity：
 
 ```azurecli
 az identity create --name "${USER_ASSIGNED_IDENTITY_NAME}" --resource-group "${RESOURCE_GROUP}"
 ```
 
-接著為它指派角色。舉例來說，如果你想讓 Pod 能列出叢集憑證，可以為這個識別指派 **Azure Kubernetes Service Cluster Admin Role**。
+接著為它指派角色。舉例來說，如果你想讓 Pod 能列出叢集憑證，可以為這個 managed identity 指派 **Azure Kubernetes Service Cluster Admin Role**。
 
 ## Create a Kubernetes Service Account
 
-建立一個用來綁定受控識別的 service account：
+建立一個用來綁定 managed identity 的 service account：
 
 ```azurecli
 export USER_ASSIGNED_IDENTITY_CLIENT_ID="$(az identity show --name "${USER_ASSIGNED_IDENTITY_NAME}" --resource-group "${RESOURCE_GROUP}" --query 'clientId' -otsv)"
@@ -122,11 +122,11 @@ metadata:
 EOF
 ```
 
-如果你的受控識別與 service account 位於[不同租用戶 (tenant)](https://azure.github.io/azure-workload-identity/docs/quick-start.html#5-create-a-kubernetes-service-account)，你應該替 service account 加上註解，讓 workload identity manager 能夠辨識它。
+如果你的 managed identity 與 service account 位於[不同 tenant](https://azure.github.io/azure-workload-identity/docs/quick-start.html#5-create-a-kubernetes-service-account)，你應該替 service account 加上註解，讓 workload identity manager 能夠辨識它。
 
 ## Establish Federated Identity Credential Between the Identity and the Service Account Issuer & Subject
 
-把 service account 與受控識別綁定：
+把 service account 與 managed identity 綁定：
 
 ```azurecli
 az identity federated-credential create \
