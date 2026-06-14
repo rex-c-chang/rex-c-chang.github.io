@@ -11,14 +11,14 @@
     </image>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 14 Jun 2026 14:38:10 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 14:47:28 +0800</lastBuildDate>
     <atom:link href="https://rex-c-chang.github.io/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 AKS 整合 Workload Identity</title>
       <link>https://rex-c-chang.github.io/zh-tw/posts/2024/03/workload-identity-aks/</link>
       <pubDate>Tue, 12 Mar 2024 15:50:00 +0800</pubDate>
       <guid>https://rex-c-chang.github.io/zh-tw/posts/2024/03/workload-identity-aks/</guid>
-      <description>一步步整合 Azure AD Workload Identity 與 AKS，讓 Pod 透過受控識別安全存取 Azure 資源，免管理密鑰。</description>
+      <description>一步步整合 Azure AD Workload Identity 與 AKS，讓 Pod 透過 managed identity 安全存取 Azure 資源，免管理密鑰。</description>
     </item>
   </channel>
 </rss>
