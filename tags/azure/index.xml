@@ -4,9 +4,14 @@
     <title>Azure on RC&#39;s Blog</title>
     <link>https://rex-c-chang.github.io/tags/azure/</link>
     <description>Recent content in Azure on RC&#39;s Blog</description>
+    <image>
+      <title>RC&#39;s Blog</title>
+      <url>https://rex-c-chang.github.io/og.png</url>
+      <link>https://rex-c-chang.github.io/og.png</link>
+    </image>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Mar 2024 15:50:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 13:47:43 +0800</lastBuildDate>
     <atom:link href="https://rex-c-chang.github.io/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Integrate Workload Identity with AKS</title>
