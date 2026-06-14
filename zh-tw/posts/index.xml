@@ -4,14 +4,9 @@
     <title>Posts on RC 的部落格</title>
     <link>https://rex-c-chang.github.io/zh-tw/posts/</link>
     <description>Recent content in Posts on RC 的部落格</description>
-    <image>
-      <title>RC 的部落格</title>
-      <url>https://rex-c-chang.github.io/og.png</url>
-      <link>https://rex-c-chang.github.io/og.png</link>
-    </image>
     <generator>Hugo</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 14 Jun 2026 14:32:27 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Mar 2024 15:50:00 +0800</lastBuildDate>
     <atom:link href="https://rex-c-chang.github.io/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 AKS 整合 Workload Identity</title>
@@ -19,6 +14,13 @@
       <pubDate>Tue, 12 Mar 2024 15:50:00 +0800</pubDate>
       <guid>https://rex-c-chang.github.io/zh-tw/posts/2024/03/workload-identity-aks/</guid>
       <description>一步步整合 Azure AD Workload Identity 與 AKS，讓 Pod 透過受控識別安全存取 Azure 資源，免管理密鑰。</description>
+    </item>
+    <item>
+      <title>你好，世界</title>
+      <link>https://rex-c-chang.github.io/zh-tw/posts/2024/01/hello-world/</link>
+      <pubDate>Fri, 05 Jan 2024 09:20:00 +0800</pubDate>
+      <guid>https://rex-c-chang.github.io/zh-tw/posts/2024/01/hello-world/</guid>
+      <description>RC 部落格的第一篇——簡單打聲招呼，並說明這裡會分享 DevOps、雲端與軟體工程的筆記。</description>
     </item>
   </channel>
 </rss>
