@@ -2,8 +2,7 @@
 title = '在 AKS 整合 Workload Identity'
 date = 2024-03-12T15:50:00+08:00
 draft = false
-categories = ["DevOps"]
-tags = ["AKS", "Azure", "Workload Identity"]
+tags = ["DevOps", "AKS", "Azure", "Workload Identity"]
 +++
 
 <!-- TODO: 待翻譯為繁體中文。以下為英文原文佔位內容。 -->
