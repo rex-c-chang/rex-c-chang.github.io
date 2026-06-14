@@ -31,6 +31,10 @@ iframe {
     --accent: #d97757;
     --accent-hover: #c46849;
 
+    /* body links — blue, like claude.com (clay stays for brand accents) */
+    --link: #146ef5;
+    --link-hover: #0b54cc;
+
     /* light palette (Claude ivory) */
     --theme: #faf9f5;        /* page background */
     --entry: #faf9f5;        /* cards / boxes — same ivory, no bg mismatch */
@@ -44,18 +48,21 @@ iframe {
 }
 
 .dark {
-    /* complementary warm dark, accent unchanged */
-    --accent: #d97757;
+    /* cohesive Catppuccin Mocha dark — harmonises with the code blocks
+       (light mode stays warm Claude ivory; each mode is internally consistent) */
+    --accent: #d97757;       /* keep clay brand accent */
     --accent-hover: #e0906f;
-    --theme: #262624;
-    --entry: #262624;        /* match page bg in dark too */
-    --primary: #f5f4ee;
-    --secondary: #b0aea5;
-    --tertiary: #3d3d3a;
-    --content: #e8e6dc;
-    --border: #3d3d3a;
-    --code-bg: #30302e;
-    --code-block-bg: #1e1e2e; /* Catppuccin Mocha (matches FOSSA) */
+    --link: #89b4fa;         /* Mocha blue (ties links to the code palette) */
+    --link-hover: #b4befe;   /* Mocha lavender */
+    --theme: #181825;        /* Mocha mantle — page bg */
+    --entry: #1e1e2e;        /* Mocha base — subtle card elevation */
+    --primary: #cdd6f4;      /* Mocha text */
+    --secondary: #a6adc8;    /* Mocha subtext0 — meta */
+    --tertiary: #313244;     /* Mocha surface0 — hover bg */
+    --content: #bac2de;      /* Mocha subtext1 — body text */
+    --border: #313244;       /* Mocha surface0 */
+    --code-bg: #313244;      /* inline code on surface0 */
+    --code-block-bg: #1e1e2e; /* Mocha base (matches FOSSA) */
 }
 
 /* --- Typography ------------------------------------------------------- */
@@ -102,17 +109,17 @@ code, kbd, pre, tt, samp,
 
 /* --- Clay accent ------------------------------------------------------ */
 
-/* inline links inside article/body content */
+/* inline links inside article/body content — blue, like claude.com */
 .post-content a,
 .first-entry .entry-content a,
 .home-info a {
-    color: var(--accent);
-    text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    color: var(--link);
+    text-decoration-color: color-mix(in srgb, var(--link) 40%, transparent);
 }
 .post-content a:hover,
 .first-entry .entry-content a:hover,
 .home-info a:hover {
-    color: var(--accent-hover);
+    color: var(--link-hover);
 }
 
 /* active nav item, post-title hover, blockquote bar, code text */
@@ -138,7 +145,7 @@ blockquote {
     border-radius: 0.35rem;
 }
 .dark .post-content :not(pre) > code {
-    color: #e0906f;
+    color: #fab387;          /* Catppuccin Mocha peach */
 }
 
 /* --- Code: blocks ----------------------------------------------------- */
