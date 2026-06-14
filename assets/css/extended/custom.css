@@ -252,3 +252,13 @@ blockquote {
 .paginav span:hover:not(.title) {
     text-decoration: none;
 }
+
+/* --- Post description / standfirst ----------------------------------- */
+/* PaperMod drops the front-matter description in as a bare line under the
+   title. Style it as an intentional muted subtitle (still in <head> meta). */
+.post-single .post-description {
+    margin-top: 0.7rem;
+    color: var(--secondary);
+    font-size: 1.15rem;
+    line-height: 1.55;
+}
