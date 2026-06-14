@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://rex-c-chang.github.io/sitemap.xml
