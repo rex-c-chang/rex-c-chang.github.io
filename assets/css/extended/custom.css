@@ -15,3 +15,250 @@ iframe {
 .entry-cover img {
     border: 1px solid var(--border);
 }
+
+/* ==========================================================================
+   Claude.com brand theme — colors + typography
+   Palette: ivory #faf9f5, ink #141413, clay accent #d97757
+   Fonts: Inter (body) / Source Serif 4 (headings) / Noto Sans TC (CJK)
+   ========================================================================== */
+
+:root {
+    /* wider layout — default PaperMod is 720px / 1024px, which feels cramped */
+    --main-width: 960px;     /* article & list content width */
+    --nav-width: 1100px;     /* header (logo + menu) width */
+
+    /* clay accent reused across the theme */
+    --accent: #d97757;
+    --accent-hover: #c46849;
+
+    /* body links — blue, like claude.com (clay stays for brand accents) */
+    --link: #146ef5;
+    --link-hover: #0b54cc;
+
+    /* light palette (Claude ivory) */
+    --theme: #faf9f5;        /* page background */
+    --entry: #faf9f5;        /* cards / boxes — same ivory, no bg mismatch */
+    --primary: #141413;      /* headings, strong text */
+    --secondary: #5e5d59;    /* muted text, meta */
+    --tertiary: #ece9e0;     /* hover backgrounds, dividers */
+    --content: #2b2926;      /* body text */
+    --border: #e8e6dc;
+    --code-bg: #f0eee6;      /* inline code */
+    --code-block-bg: #1e1e2e; /* Catppuccin Mocha (matches FOSSA) */
+}
+
+.dark {
+    /* cohesive Catppuccin Mocha dark — harmonises with the code blocks
+       (light mode stays warm Claude ivory; each mode is internally consistent) */
+    --accent: #d97757;       /* keep clay brand accent */
+    --accent-hover: #e0906f;
+    --link: #89b4fa;         /* Mocha blue (ties links to the code palette) */
+    --link-hover: #b4befe;   /* Mocha lavender */
+    --theme: #181825;        /* Mocha mantle — page bg */
+    --entry: #1e1e2e;        /* Mocha base — subtle card elevation */
+    --primary: #cdd6f4;      /* Mocha text */
+    --secondary: #a6adc8;    /* Mocha subtext0 — meta */
+    --tertiary: #313244;     /* Mocha surface0 — hover bg */
+    --content: #bac2de;      /* Mocha subtext1 — body text */
+    --border: #313244;       /* Mocha surface0 */
+    --code-bg: #313244;      /* inline code on surface0 */
+    --code-block-bg: #1e1e2e; /* Mocha base (matches FOSSA) */
+}
+
+/* --- Typography ------------------------------------------------------- */
+
+:root {
+    --sans: "Inter", "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --serif: "Source Serif 4", "Noto Sans TC", Georgia, "Times New Roman", serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* body / 內文 uses the sans (Anthropic Sans equivalent) — matches the
+   body text on claude.com/blog. Headings stay serif (rule below). */
+body {
+    font-family: var(--sans);
+}
+
+/* match Claude's comfortable body measure */
+.post-content {
+    line-height: 1.6;
+}
+
+/* PaperMod gives list pages (home, /posts/, categories…) a --code-bg
+   background, which differs from the article page's --theme. Unify them. */
+.list,
+[data-theme="dark"] .list {
+    background: var(--theme);
+}
+
+/* headings & display text use the serif (Anthropic Serif equivalent) */
+h1, h2, h3, h4, h5, h6,
+.entry-header h1, .entry-header h2,
+.post-title,
+.page-header .title,
+.home-info .entry-header,
+.profile .profile_inner h1 {
+    font-family: var(--serif);
+    letter-spacing: -0.01em;
+}
+
+code, kbd, pre, tt, samp,
+.post-content pre code {
+    font-family: var(--mono);
+}
+
+/* --- Clay accent ------------------------------------------------------ */
+
+/* inline links inside article/body content — blue, like claude.com */
+.post-content a,
+.first-entry .entry-content a,
+.home-info a {
+    color: var(--link);
+    text-decoration-color: color-mix(in srgb, var(--link) 40%, transparent);
+}
+.post-content a:hover,
+.first-entry .entry-content a:hover,
+.home-info a:hover {
+    color: var(--link-hover);
+}
+
+/* active nav item, post-title hover, blockquote bar, code text */
+.nav .logo a:hover,
+#menu a.active,
+.post-entry:hover .entry-header h2,
+.post-title:hover {
+    color: var(--accent);
+}
+#menu a.active {
+    border-bottom: 2px solid var(--accent);
+}
+blockquote {
+    border-inline-start-color: var(--accent) !important;
+}
+/* --- Code: inline ----------------------------------------------------- */
+.post-content :not(pre) > code {
+    color: var(--accent-hover);
+    background: var(--code-bg);
+    font-size: 0.85em;
+    padding: 0.12rem 0.4rem;
+    border: 1px solid color-mix(in srgb, var(--border) 70%, #00000010);
+    border-radius: 0.35rem;
+}
+.dark .post-content :not(pre) > code {
+    color: #fab387;          /* Catppuccin Mocha peach */
+}
+
+/* --- Code: blocks ----------------------------------------------------- */
+.post-content pre {
+    margin: 1.4rem 0;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(20, 20, 19, 0.06),
+                0 8px 24px rgba(20, 20, 19, 0.06);
+    border: 1px solid rgba(20, 20, 19, 0.08);
+    overflow: hidden;            /* keep rounded corners over the scroll area */
+}
+
+.post-content pre code,
+.md-content pre code {
+    display: block;
+    padding: 1rem 1.25rem;
+    color: #cdd6f4;              /* Catppuccin Mocha foreground (plain blocks) */
+    font-size: 0.86em;
+    line-height: 1.65;
+    border-radius: 0;            /* radius lives on the <pre> wrapper now */
+    border: 0;
+    box-shadow: none;
+    white-space: pre;            /* scroll long lines instead of breaking words */
+    word-break: normal;
+    -moz-tab-size: 4;
+    tab-size: 4;
+}
+
+/* fenced blocks WITH a language render inside .highlight > pre.chroma */
+.post-content .highlight {
+    margin: 1.4rem 0;
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(20, 20, 19, 0.06),
+                0 8px 24px rgba(20, 20, 19, 0.06);
+    border: 1px solid rgba(20, 20, 19, 0.08);
+    overflow: hidden;
+    background: var(--code-block-bg);
+}
+.post-content .highlight pre {
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* copy button — sits in the corner, reveals on hover, clay on press */
+.copy-code {
+    top: 8px;
+    right: 8px;
+    padding: 3px 9px;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: rgba(245, 244, 238, 0.85);
+    background: rgba(245, 244, 238, 0.10);
+    border: 1px solid rgba(245, 244, 238, 0.15);
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.copy-code:hover {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* --- Prev / Next post navigation ------------------------------------- */
+.paginav {
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+.paginav a {
+    width: 50%;
+    gap: 0.45rem;
+    padding: 0.9rem 1.15rem;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.paginav a:hover {
+    background: var(--entry);    /* keep bg stable (theme sets --border on hover) */
+    border-color: var(--accent);
+    box-shadow: 0 4px 14px rgba(20, 20, 19, 0.07);
+    transform: translateY(-2px);
+}
+/* the small "« PREV" / "NEXT »" label */
+.paginav .title {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+/* the linked post title */
+.paginav a > span:not(.title) {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    line-height: 1.3;
+    color: var(--primary);
+}
+/* drop the default underline-on-hover; the card hover is the affordance */
+.paginav span:hover:not(.title) {
+    text-decoration: none;
+}
+
+/* --- Post description / standfirst ----------------------------------- */
+/* PaperMod drops the front-matter description in as a bare line under the
+   title. Style it as an intentional muted subtitle (still in <head> meta). */
+.post-single .post-description {
+    margin-top: 0.7rem;
+    color: var(--secondary);
+    font-size: 1.15rem;
+    line-height: 1.55;
+}
