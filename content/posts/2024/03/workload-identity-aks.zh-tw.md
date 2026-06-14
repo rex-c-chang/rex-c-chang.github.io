@@ -8,25 +8,25 @@ tags = ["DevOps", "AKS", "Azure", "Workload Identity"]
 
 本指南將說明如何把 Azure AD Workload Identity 整合到 Azure Kubernetes Service (AKS)。透過這個整合，AKS 上的工作負載可以使用受控識別 (managed identity) 安全地存取 Azure 資源，而不需要在應用程式中直接管理密鑰或認證。
 
-## 事前準備
+## Prerequisites
 
-### 帳號權限
+### Account Permission
 
 開始之前，請確認以下事項：
 
 - 你已經以使用者身分登入 Azure CLI。
 - 你登入的帳號具備在 Azure 中建立使用者指派受控識別 (user-assigned managed identity) 的足夠權限。
 
-### 工具
+### Tools
 
 - Azure CLI 版本 ≥ 2.42.0
 - Helm 3
 
-### 受控叢集
+### Managed Cluster
 
 - 版本 ≥ v1.22 的 Kubernetes 叢集
 
-## 元件安裝
+## Components Installation
 
 ### OIDC
 
@@ -62,19 +62,19 @@ az aks show --resource-group <resource_group> --name <cluster_name> --query "oid
 - 將簽署過的 service account token 投射到一個已知的路徑。
 - 依據加上註解的 service account，把與驗證相關的環境變數注入到你的 Pod。
 
-#### 使用 Azure CLI 安裝
+#### Install by Azure CLI
 
 ```azurecli
 az aks update --resource-group myResourceGroup --name myAKSCluster --enable-workload-identity
 ```
 
-#### 使用 Helm 安裝
+#### Install by Helm
 
 可以參考這份[文件](https://azure.github.io/azure-workload-identity/docs/installation/mutating-admission-webhook.html)。
 
 執行上述指令後，AKS 叢集會建立一個 workload identity controller。
 
-## 匯出環境變數
+## Export Environment Variables
 
 先確認我們目前已經有的東西：
 
@@ -91,7 +91,7 @@ export SERVICE_ACCOUNT_NAME="workload-identity-sa"
 export SERVICE_ACCOUNT_ISSUER="<your service account issuer URL>"
 ```
 
-## 建立使用者指派的受控識別並授予存取資源的權限
+## Create a User-Assigned Managed Identity and Grant Permissions to Access Your Resources
 
 建立一個將與 service account 綁定的受控識別：
 
@@ -101,7 +101,7 @@ az identity create --name "${USER_ASSIGNED_IDENTITY_NAME}" --resource-group "${R
 
 接著為它指派角色。舉例來說，如果你想讓 Pod 能列出叢集憑證，可以為這個識別指派 **Azure Kubernetes Service Cluster Admin Role**。
 
-## 建立 Kubernetes Service Account
+## Create a Kubernetes Service Account
 
 建立一個用來綁定受控識別的 service account：
 
@@ -124,7 +124,7 @@ EOF
 
 如果你的受控識別與 service account 位於[不同租用戶 (tenant)](https://azure.github.io/azure-workload-identity/docs/quick-start.html#5-create-a-kubernetes-service-account)，你應該替 service account 加上註解，讓 workload identity manager 能夠辨識它。
 
-## 在識別與 Service Account 的 Issuer 及 Subject 之間建立同盟身分認證
+## Establish Federated Identity Credential Between the Identity and the Service Account Issuer & Subject
 
 把 service account 與受控識別綁定：
 
@@ -137,7 +137,7 @@ az identity federated-credential create \
   --subject "system:serviceaccount:${SERVICE_ACCOUNT_NAMESPACE}:${SERVICE_ACCOUNT_NAME}"
 ```
 
-## 部署工作負載
+## Deploy Workload
 
 ```yml
 cat <<EOF | kubectl apply -f -
@@ -172,7 +172,7 @@ EOF
 kubectl describe pod quick-start
 ```
 
-## 驗證
+## Verification
 
 你可以連進 quick-start 這個 Pod，執行以下指令：
 
@@ -242,7 +242,7 @@ spec:
 EOF
 ```
 
-## 參考資料
+## References
 
 - [Azure AD Workload Identity](https://azure.github.io/azure-workload-identity/docs/quick-start.html)
 - [Deploy and Configure Workload Identity on an Azure Kubernetes Service (AKS) Cluster](https://learn.microsoft.com/en-us/azure/aks/workload-identity-deploy-cluster#create-a-managed-identity-and-grant-permissions-to-access-the-secret)
