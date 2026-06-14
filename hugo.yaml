@@ -23,8 +23,8 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: RC's Blog
-  description: "Notes on DevOps, cloud, and software engineering — Kubernetes, Azure, and the things I learn building and running systems."
-  keywords: [DevOps, Kubernetes, Azure, AKS, Cloud, Software Engineering]
+  description: "Notes on backend and DevOps — Kubernetes, Azure, distributed systems, APIs, and the things I learn building and running services in production."
+  keywords: [Backend, Backend Engineering, DevOps, Distributed Systems, APIs, Microservices, Kubernetes, Azure, AKS, Cloud, Software Engineering]
   author: "Rex Chang"
   # Default OpenGraph/Twitter share image (1200x630, in static/).
   images: ["/og.png"]
@@ -124,7 +124,7 @@ languages:
     weight: 1
     title: "RC's Blog"
     params:
-      description: "Notes on DevOps, cloud, and software engineering — Kubernetes, Azure, and the things I learn building and running systems."
+      description: "Notes on backend and DevOps — Kubernetes, Azure, distributed systems, APIs, and the things I learn building and running services in production."
       homeInfoParams:
         Title: "Hi there \U0001F44B"
         Content: Welcome to my blog! This is a space where I share my thoughts and insights on a variety of topics, from technology to personal growth and development.
@@ -149,7 +149,7 @@ languages:
     weight: 2
     title: "RC 的部落格"
     params:
-      description: "DevOps、雲端與軟體工程的筆記——Kubernetes、Azure，以及在建置與維運系統過程中學到的事。"
+      description: "後端工程與 DevOps 的筆記——Kubernetes、Azure、分散式系統、API，以及在打造與維運服務時學到的事。"
       homeInfoParams:
         Title: "嗨 \U0001F44B"
         Content: 歡迎來到我的部落格！這裡是我分享想法與心得的地方，主題涵蓋技術、個人成長等各種領域。
